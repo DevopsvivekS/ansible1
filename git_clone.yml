@@ -1,0 +1,12 @@
+---
+- name: cloning repo
+  hosts: webserver
+  gather_facts: no
+  vars_files:
+      - vault2.yml
+
+  tasks:  
+  - name: cloning repo
+    git: 
+      repo: https://DevopsvivekS:{{git_token}}@github.com/DevopsvivekS/vaulttest.git
+      dest: /home/ansadmin/valuttest 
